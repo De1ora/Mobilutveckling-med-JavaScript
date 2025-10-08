@@ -1,8 +1,8 @@
-import { ScrollView, StyleSheet } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
 import { ThemedText } from '@/components/themed-text';
 import { ThemedView } from '@/components/themed-view';
 import { Fonts } from '@/constants/theme';
+import { ScrollView, StyleSheet } from 'react-native';
+import { SafeAreaView } from 'react-native-safe-area-context';
 
 export default function FavoritesScreen() {
   return (
@@ -16,8 +16,6 @@ export default function FavoritesScreen() {
           }]}>
           Favorites
         </ThemedText>
-      </ThemedView>
-      <ThemedView>
       </ThemedView>
       </ScrollView>
     </SafeAreaView>
