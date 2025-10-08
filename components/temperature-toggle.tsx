@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
+import { StyleSheet, TouchableOpacity, View } from 'react-native';
+import { ThemedText } from './themed-text';
 
 const TemperatureToggle = () => {
   const [unit, setUnit] = useState('celsius');
 
   return (
     <View style={styles.container}>
-      <Text style={styles.label}>Choose your temperature unit:</Text>
+      <ThemedText style={styles.label}>Choose your temperature unit:</ThemedText>
       
       <View style={styles.toggleContainer}>
         <TouchableOpacity
@@ -18,18 +19,18 @@ const TemperatureToggle = () => {
           onPress={() => setUnit('fahrenheit')}
           activeOpacity={0.8}
         >
-          <Text style={[
+          <ThemedText style={[
             styles.toggleText,
             unit === 'fahrenheit' && styles.activeText
           ]}>
             Fahrenheit
-          </Text>
-          <Text style={[
+          </ThemedText>
+          <ThemedText style={[
             styles.unitSymbol,
             unit === 'fahrenheit' && styles.activeText
           ]}>
             °F
-          </Text>
+          </ThemedText>
         </TouchableOpacity>
 
         <TouchableOpacity
@@ -41,24 +42,24 @@ const TemperatureToggle = () => {
           onPress={() => setUnit('celsius')}
           activeOpacity={0.8}
         >
-          <Text style={[
+          <ThemedText style={[
             styles.toggleText,
             unit === 'celsius' && styles.activeText
           ]}>
             Celsius
-          </Text>
-          <Text style={[
+          </ThemedText>
+          <ThemedText style={[
             styles.unitSymbol,
             unit === 'celsius' && styles.activeText
           ]}>
             °C
-          </Text>
+          </ThemedText>
         </TouchableOpacity>
       </View>
 
-      <Text style={styles.resultText}>
+      <ThemedText style={styles.resultText}>
         Temperature will be displayed in {unit === 'celsius' ? 'Celsius (°C)' : 'Fahrenheit (°F)'}
-      </Text>
+      </ThemedText>
     </View>
   );
 };
@@ -72,13 +73,12 @@ const styles = StyleSheet.create({
     fontSize: 18,
     marginBottom: 15,
     fontWeight: '600',
-    color: '#333',
   },
   toggleContainer: {
     flexDirection: 'row',
     borderRadius: 15,
     borderWidth: 2,
-    borderColor: '#666',
+    borderColor: '#000',
     overflow: 'hidden',
     marginBottom: 10,
   },
@@ -98,7 +98,7 @@ const styles = StyleSheet.create({
     borderTopRightRadius: 13,
     borderBottomRightRadius: 13,
     borderLeftWidth: 2,
-    borderLeftColor: '#666',
+    borderLeftColor: '#000',
   },
   activeButton: {
     backgroundColor: '#90EE90',
@@ -119,7 +119,6 @@ const styles = StyleSheet.create({
   },
   resultText: {
     fontSize: 14,
-    color: '#7f7f7fff',
     fontStyle: 'italic',
     marginTop: 5,
   },
