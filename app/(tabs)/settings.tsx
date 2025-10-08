@@ -12,9 +12,9 @@ export default function SettingsScreen() {
       <ThemedView style={styles.content}>
         <ThemedText
           type="title"
-          style={{
+          style={[styles.title,{
             fontFamily: Fonts.rounded, // Ändra till något custom?
-          }}>
+          }]}>
           Settings
         </ThemedText>
       </ThemedView>
@@ -33,4 +33,7 @@ const styles = StyleSheet.create({
   content: {
     padding: 20,
   },
+  title: {
+    textAlign: 'center',
+  }
 });
